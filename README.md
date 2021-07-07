@@ -1,0 +1,2 @@
+# Paging3Example
+The Paging Library helps you load and display pages of data from a larger dataset from local storage or over the network. This approach allows your app to use both network bandwidth and system resources more efficiently. In this example, i am showing list of images using jetpack paging library + Groupie and the second example is using paging library with RemoteMediator + Room Database
