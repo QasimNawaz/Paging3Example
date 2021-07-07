@@ -1,0 +1,26 @@
+[
+    {
+        "merged": "E:\\Android\\Test Projects\\Paging3Example\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_data.xml",
+        "source": "E:\\Android\\Test Projects\\Paging3Example\\app\\src\\main\\res\\layout\\activity_data.xml"
+    },
+    {
+        "merged": "E:\\Android\\Test Projects\\Paging3Example\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\item_loading_state.xml",
+        "source": "E:\\Android\\Test Projects\\Paging3Example\\app\\src\\main\\res\\layout\\item_loading_state.xml"
+    },
+    {
+        "merged": "E:\\Android\\Test Projects\\Paging3Example\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\fragment_paging.xml",
+        "source": "E:\\Android\\Test Projects\\Paging3Example\\app\\src\\main\\res\\layout\\fragment_paging.xml"
+    },
+    {
+        "merged": "E:\\Android\\Test Projects\\Paging3Example\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\fragment_paging_with_room.xml",
+        "source": "E:\\Android\\Test Projects\\Paging3Example\\app\\src\\main\\res\\layout\\fragment_paging_with_room.xml"
+    },
+    {
+        "merged": "E:\\Android\\Test Projects\\Paging3Example\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_main.xml",
+        "source": "E:\\Android\\Test Projects\\Paging3Example\\app\\src\\main\\res\\layout\\activity_main.xml"
+    },
+    {
+        "merged": "E:\\Android\\Test Projects\\Paging3Example\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\pixabay_list_item.xml",
+        "source": "E:\\Android\\Test Projects\\Paging3Example\\app\\src\\main\\res\\layout\\pixabay_list_item.xml"
+    }
+]
