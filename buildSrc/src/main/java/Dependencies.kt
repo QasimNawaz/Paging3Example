@@ -87,3 +87,7 @@ object Navigation {
     const val navigationUIKtx = "androidx.navigation:navigation-ui-ktx:${Versions.navVersion}"
     const val navigationDynFeature = "androidx.navigation:navigation-dynamic-features-fragment:${Versions.navVersion}"
 }
+
+object Timber{
+    const val timber = "com.jakewharton.timber:timber:${Versions.timber}"
+}

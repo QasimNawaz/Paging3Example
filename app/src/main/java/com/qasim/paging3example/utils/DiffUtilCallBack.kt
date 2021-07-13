@@ -9,8 +9,6 @@ class DiffUtilCallBack : DiffUtil.ItemCallback<PixabayObj>() {
     }
 
     override fun areContentsTheSame(oldItem: PixabayObj, newItem: PixabayObj): Boolean {
-        return oldItem.id == newItem.id
-                && oldItem.previewURL == newItem.previewURL
-                && oldItem.largeImageURL == newItem.largeImageURL
+        return oldItem == newItem
     }
 }

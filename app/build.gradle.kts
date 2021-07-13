@@ -136,4 +136,7 @@ dependencies {
     implementation(Navigation.navigationFrgKtx)
     implementation(Navigation.navigationUIKtx)
     implementation(Navigation.navigationDynFeature)
+
+    //Timber
+    implementation(Timber.timber)
 }

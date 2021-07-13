@@ -36,7 +36,6 @@ class PixabayRemoteMediator(
             }
             val currentPage = loadKey?.let { loadKey.index } ?: 1
             val response = pixaBayService.fetchPixabayList(
-                key = "22314051-7ec0100d59007017d6ff1aad2",
                 perPage = state.config.pageSize.toString(),
                 page = currentPage.toString()
             )

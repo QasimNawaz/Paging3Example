@@ -15,8 +15,12 @@ import com.qasim.paging3example.data.model.PixabayObj
 import com.qasim.paging3example.utils.DiffUtilCallBack
 import kotlinx.android.synthetic.main.pixabay_list_item.view.*
 
-class PixabayAdapter :
+class PixabayAdapter (private val listener: PixbayAdapterListener):
     PagingDataAdapter<PixabayObj, PixabayAdapter.RedditViewHolder>(DiffUtilCallBack()) {
+
+    interface PixbayAdapterListener{
+        fun onPixbayItemClicked(item : PixabayObj)
+    }
 
     companion object {
         // Define Loading ViewType
@@ -34,7 +38,7 @@ class PixabayAdapter :
     }
 
     override fun onBindViewHolder(holder: RedditViewHolder, position: Int) {
-        getItem(position)?.let { holder.bindPost(it) }
+        getItem(position)?.let { holder.bindPost(it, listener) }
     }
 
     override fun getItemViewType(position: Int): Int {
@@ -42,7 +46,9 @@ class PixabayAdapter :
         return if (position == itemCount) MOVIE_ITEM else LOADING_ITEM
     }
 
-    class RedditViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+    class RedditViewHolder(
+        itemView: View
+    ) : RecyclerView.ViewHolder(itemView) {
         private val loadImg: ImageView = itemView.loadImg
         private val shimmer: Shimmer =
             Shimmer.AlphaHighlightBuilder()// The attributes for a ShimmerDrawable is set by this builder
@@ -56,14 +62,21 @@ class PixabayAdapter :
             setShimmer(shimmer)
         }
 
-        fun bindPost(redditPost: PixabayObj) {
-            with(redditPost) {
+        fun bindPost(
+            pixabayObj: PixabayObj,
+            listener: PixbayAdapterListener
+        ) {
+            with(pixabayObj) {
                 Glide
                     .with(itemView.context)
-                    .load(redditPost.previewURL)
+                    .load(pixabayObj.previewURL)
                     .placeholder(shimmerDrawable)
                     .diskCacheStrategy(DiskCacheStrategy.AUTOMATIC)
                     .into(loadImg)
+            }
+
+            itemView.setOnClickListener {
+                listener.onPixbayItemClicked(pixabayObj)
             }
         }
     }

@@ -16,8 +16,8 @@ object Versions {
     const val materialVersion = "1.2.0-alpha06"
     const val retrofit2Version = "2.9.0"
     const val retrofitInterceptor = "4.2.2"
-    const val coroutinesCoreVersion = "1.2.1"
-    const val coroutinesAndroidVersion = "1.1.1"
+    const val coroutinesCoreVersion = "1.3.2"
+    const val coroutinesAndroidVersion = "1.3.2"
     const val gsonVersion = "2.8.6"
     const val hiltVersion = "2.28-alpha"
     const val hiltLifeCycleVersion = "1.0.0-alpha01"
@@ -28,6 +28,7 @@ object Versions {
     const val shimmer = "0.5.0"
     const val lifeCycle = "2.2.0"
     const val navVersion = "2.3.5"
+    const val timber = "4.7.1"
 }
 
 object AppConfiguration {

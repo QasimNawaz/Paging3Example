@@ -23,7 +23,6 @@ class PixabayDataSource(val apiService: WebService) :
             val pageIndex = params.key ?: TMDB_STARTING_PAGE_INDEX
             val response =
                 apiService.fetchPixabayList(
-                    key = "22314051-7ec0100d59007017d6ff1aad2",
                     perPage = params.loadSize.toString(),
                     page = params.key.toString()
                 )
