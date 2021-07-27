@@ -52,7 +52,12 @@ class PixabayDataSource(val apiService: WebService) :
                         nextKey = nextKey
                     )
                 } else {
-                    return LoadResult.Error(Throwable("${response.code()}"))
+                    return LoadResult.Error(
+                        Throwable(
+                            response.message(),
+                            Throwable("${response.code()}")
+                        )
+                    )
                 }
 
             } else {
@@ -61,7 +66,7 @@ class PixabayDataSource(val apiService: WebService) :
 
         } catch (exception: Exception) {
             Log.e("PostsDataSource", "Exception: ${exception.message}")
-            return LoadResult.Error(exception)
+            return LoadResult.Error(Throwable(exception.message, exception.cause))
         }
     }
 
