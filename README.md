@@ -19,8 +19,6 @@ The Paging Library helps you load and display pages of data from a larger datase
 
 [Dagger Hilt](https://developer.android.com/training/dependency-injection/hilt-android) - For dependency injection
 
-[Ktlint](https://ktlint.github.io/)
-
 [Gradle Kotlin DSL](https://docs.gradle.org/current/userguide/kotlin_dsl.html) - Gradle’s Kotlin DSL provides an alternative syntax to the traditional Groovy DSL with an enhanced editing experience in supported IDEs, with superior content assist, refactoring, documentation, and more
 
 [Databinding](https://developer.android.com/topic/libraries/data-binding) - To bind UI components in your layouts to data sources in your app using a declarative format rather than programmatically
