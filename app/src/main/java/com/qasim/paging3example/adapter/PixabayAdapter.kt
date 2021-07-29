@@ -1,6 +1,7 @@
 package com.qasim.paging3example.adapter
 
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import androidx.annotation.NonNull
@@ -10,9 +11,11 @@ import com.bumptech.glide.Glide
 import com.bumptech.glide.load.engine.DiskCacheStrategy
 import com.facebook.shimmer.Shimmer
 import com.facebook.shimmer.ShimmerDrawable
+import com.qasim.paging3example.R
 import com.qasim.paging3example.data.model.PixabayObj
 import com.qasim.paging3example.databinding.PixabayListItemBinding
 import com.qasim.paging3example.utils.DiffUtilCallBack
+import kotlinx.android.synthetic.main.pixabay_list_item.view.*
 
 class PixabayAdapter(private val listener: PixbayAdapterListener) :
     PagingDataAdapter<PixabayObj, PixabayAdapter.RedditViewHolder>(DiffUtilCallBack()) {
@@ -31,9 +34,10 @@ class PixabayAdapter(private val listener: PixbayAdapterListener) :
 
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RedditViewHolder {
-//        val view =
-//            LayoutInflater.from(parent.context).inflate(R.layout.pixabay_list_item, parent, false)
-        return RedditViewHolder(PixabayListItemBinding.inflate(LayoutInflater.from(parent.context)))
+        val view =
+            LayoutInflater.from(parent.context).inflate(R.layout.pixabay_list_item, parent, false)
+        return RedditViewHolder(view)
+//        return RedditViewHolder(PixabayListItemBinding.inflate(LayoutInflater.from(parent.context)))
     }
 
     override fun onBindViewHolder(holder: RedditViewHolder, position: Int) {
@@ -46,9 +50,9 @@ class PixabayAdapter(private val listener: PixbayAdapterListener) :
     }
 
     class RedditViewHolder(
-        binding: PixabayListItemBinding
-    ) : RecyclerView.ViewHolder(binding.root) {
-        private val loadImg: ImageView = binding.loadImg
+        itemView: View
+    ) : RecyclerView.ViewHolder(itemView) {
+        private val loadImg: ImageView = itemView.loadImg
         private val shimmer: Shimmer =
             Shimmer.AlphaHighlightBuilder()// The attributes for a ShimmerDrawable is set by this builder
                 .setDuration(1000) // how long the shimmering animation takes to do one full sweep
@@ -65,14 +69,12 @@ class PixabayAdapter(private val listener: PixbayAdapterListener) :
             pixabayObj: PixabayObj,
             listener: PixbayAdapterListener
         ) {
-            with(pixabayObj) {
-                Glide
-                    .with(itemView.context)
-                    .load(pixabayObj.previewURL)
-                    .placeholder(shimmerDrawable)
-                    .diskCacheStrategy(DiskCacheStrategy.AUTOMATIC)
-                    .into(loadImg)
-            }
+            Glide
+                .with(itemView.context)
+                .load(pixabayObj.previewURL)
+                .placeholder(shimmerDrawable)
+                .diskCacheStrategy(DiskCacheStrategy.AUTOMATIC)
+                .into(loadImg)
 
             itemView.setOnClickListener {
                 listener.onPixbayItemClicked(pixabayObj)
